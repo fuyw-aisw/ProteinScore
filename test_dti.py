@@ -57,7 +57,7 @@ def test(args):
                 #protein_ids.extend(protein_id)
                 #smiles.extend(smile)
                 print(1)
-        result_name = "test_results/test_model_"+str(args.dataset)+'_'+str(i)+"_fold_1.pkl"
+        result_name = "test_results/test_model_"+str(args.dataset)+'_'+str(i)+"_fold.pkl"
         with open(result_name, "wb") as f:
             pkl.dump([y_true_all,y_pred_scores, y_pred_labels], f)
         precision = precision_score(y_true_all,y_pred_labels)

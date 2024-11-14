@@ -31,7 +31,7 @@ def test(args):
     k_fold = 5
     model = Attention_subloc(pretrain_model=args.model,task=args.task, device=args.device).to(args.device)
     for i in range(k_fold):
-        model_pt= f"subloc_model/model_mf_{args.task}_64_0.001_{i}_fold.pt"
+        model_pt= f"subloc_model/model_mf_{args.task}_64_0.001_final_{i}_fold.pt"
         model.load_state_dict(torch.load(model_pt,map_location=args.device))
         model.eval()
     

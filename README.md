@@ -8,8 +8,8 @@ Here, we introduce ProteinScore, a generalized graph transformer based method de
 
 Start by following this source codes:
 ```bash
-git clone https://github.com/fuyw-aisw/ProteinGGT.git
-cd ProteinGGT
+git clone https://github.com/fuyw-aisw/ProteinScore.git
+cd ProteinScore
 conda env create -f environment.yml
 ## or install the following dependencies
 ## step1: install PyTorch’s CUDA support on Linux

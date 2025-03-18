@@ -244,13 +244,14 @@ def finetune_DTI(args,seed):
                 if eval_loss < best_eval_loss:
                     best_eval_loss = eval_loss
                     es = 0
+                    torch.save(model.state_dict(), args.model_save_path +str(args.dataset)+'_'+str(args.batch_size)+'_'+str(args.learning_rate)+'_'+str(i)+"_fold.pt")
+                   
                 else:
                     es += 1
                     print("Counter {} of 5".format(es))
 
                 if es > 4 or ith_epoch+1==20:
-                    torch.save(model.state_dict(), args.model_save_path +str(args.dataset)+'_'+str(args.batch_size)+'_'+str(args.learning_rate)+'_'+str(i)+"_fold.pt")
-                    break
+                     break
                     #if args.model=="trained_models/model_mf_alpha_edge_esm1b_512.pt":
                     #    torch.save(model.state_dict(), args.model_save_path + "mf_"+str(args.dataset)+'_'+str(args.batch_size)+'_'+str(args.learning_rate)+'_'+str(ith_epoch+1)+'_'+str(i)+"_fold.pt")
                     #    break

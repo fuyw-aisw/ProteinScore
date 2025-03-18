@@ -219,11 +219,12 @@ def finetune_subloc(args,seed):
                 if eval_loss < best_eval_loss:
                     best_eval_loss = eval_loss
                     es = 0
+                    torch.save(model.state_dict(), args.model_save_path +str(args.task)+'_'+str(args.batch_size)+'_'+str(args.learning_rate)+'_'+str(i)+"_fold.pt")
+                    
                 else:
                     es += 1
                     print("Counter {} of 5".format(es))
                 if es > 4:
-                    torch.save(model.state_dict(), args.model_save_path +str(args.task)+'_'+str(args.batch_size)+'_'+str(args.learning_rate)+'_'+str(i)+"_fold.pt")
                     break
 
                 #if (ith_epoch+1) % 10 == 0:

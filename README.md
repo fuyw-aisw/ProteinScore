@@ -24,3 +24,8 @@ pip install https://data.pyg.org/whl/torch-1.7.0%2Bcu110/torch_spline_conv-1.2.1
 pip install torch_geometric==1.6.3
 pip install fair-esm
 ```
+## Train
+For protein function prediction
+```bash
+python train.py
+```

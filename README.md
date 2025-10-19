@@ -25,7 +25,25 @@ pip install torch_geometric==1.6.3
 pip install fair-esm
 ```
 ## Train
-For protein function prediction
+For protein function prediction, and the trained models are saved in sorted_model dir 
 ```bash
+## train
 python train.py
+## test
+python test.py
+```
+## Fine-tuning
+For DTI with trained models before
+```bash
+## train
+python finetune_dti.py
+## test
+python test_dti.py
+```
+For DTI with trained models before
+```bash
+## train
+python finetune_subloc.py
+## test
+python test_subloc.py
 ```
